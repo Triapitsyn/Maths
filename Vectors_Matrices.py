@@ -307,8 +307,8 @@ class Matrix(Numbers):
         return Matrix(self.data)
 
     @staticmethod
-    def transposed(matr):
-        return Matrix(list(map(lambda *x: Vector(x), *matr)))
+    def transposed(matrix):
+        return Matrix(list(map(lambda *x: Vector(x), *matrix)))
 
     def solve(self, bias):
         ext = Matrix(list(map(lambda x, y: list(x) + [y], self, bias)))
