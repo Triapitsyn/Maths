@@ -183,7 +183,7 @@ class Matrix(Numbers):
         columnCntMax = max(map(lambda x: len(x), a))
         columnCntMin = min(map(lambda x: len(x), a))
         if columnCntMax != columnCntMin:
-            raise MatrixInitError
+            raise MatrixInitError()
         self.data = []
         for vec in a:
             self.data.append(Vector(vec))
