@@ -111,12 +111,11 @@ class permutation():
 
 s1 = permutation([2, 7, 4, 5, 6, 0, 1, 3])
 s2 = permutation([2, 4, 6, 5, 3, 0, 7, 1])
-rightSide = (s1 ** (-1) * s2 ** 11) ** 173
-# it works, but it have already been calculated theoretically
-
-
-# rightSide = permutation([3, 0, 6, 1, 5, 4, 2, 7]) #Right side of equation
 leftSideMid = permutation([3, 6, 1, 5, 4, 0, 2, 7])  # Left middle side of equation
+# Solving: sigma * leftSideMid * sigma = (s1 ** (-1) * s2 ** 11) ** 173
+# For sigma as permutation of 8 elements
+
+rightSide = (s1 ** (-1) * s2 ** 11) ** 173
 for sigma in permutation.permutations(list(range(8))):  # Brute-trying all permutation's with length 8
     if sigma * leftSideMid * sigma == rightSide:  # Check if another sigma is root of equation
         print(sigma.__str__(latex=False))  # Print latex matrix of equation's root
